@@ -73,6 +73,52 @@ namespace Xwhile2
             }
             Console.WriteLine($"{x + y}");
 
+            //q5
+            char letter, guessLetter = ' ';
+            Random rnd = new Random();
+
+            //letter = (char)rnd.Next('a','z');
+            letter = 'd';
+            int chance = 1;
+            bool guess = false;
+
+            while (guess == false)
+            {
+                Console.WriteLine("Enter a guess ,between a - z: ");
+                guessLetter = char.Parse(Console.ReadLine());
+                //guess = guessLetter == letter;
+                if (guessLetter == letter && chance == 1)
+                {
+                    Console.WriteLine("You won!!!\n" +
+                          $"Your number of chances you used {chance}");
+                    guess = true;
+                }
+                else if (guessLetter == letter && chance < 5)
+                {
+                    Console.WriteLine("You won!!!\n" +
+                          $"Your number of chances you used {chance}");
+                    guess = true;
+                }
+                else if (chance == 5)
+                {
+                    Console.WriteLine("You lose , you used all your chances to win\n" +
+                        $"The letter is {guessLetter}");
+                    guess = true;
+                }
+                else
+                {
+                    if ((int)letter == (int)guessLetter + 5)
+                        Console.WriteLine("The letter is bigger then your guessed");
+                    else if ((int)letter == (int)guessLetter - 5)
+                        Console.WriteLine("The letter is smaller then your guessed");
+                    else
+                        Console.WriteLine("You too far from these letter");
+                    //chance++;
+                }
+                chance++;
+            }
+            
+            
             Console.ReadLine();
         }
     }
