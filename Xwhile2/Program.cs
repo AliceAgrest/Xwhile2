@@ -8,7 +8,7 @@ namespace Xwhile2
         static void Main(string[] args)
         {
             //q1
-            /*
+            
             int num, maxNum = 0, lowNum = 0, diffrence = 0;
             Console.WriteLine("Enter a number ");
             num = int.Parse(Console.ReadLine());
@@ -41,7 +41,7 @@ namespace Xwhile2
             }
             avg = (double)sum / dayCount;
             Console.WriteLine($"The temp average is {avg}");
-            */
+            
             //q3
 
             int startNum1 = 1, startNum = 0, N, fibonach = 0;
@@ -77,8 +77,8 @@ namespace Xwhile2
             char letter, guessLetter = ' ';
             Random rnd = new Random();
 
-            //letter = (char)rnd.Next('a','z');
-            letter = 'd';
+            letter = (char)rnd.Next('a','z');
+            //letter = 'd';
             int chance = 1;
             bool guess = false;
 
@@ -86,7 +86,7 @@ namespace Xwhile2
             {
                 Console.WriteLine("Enter a guess ,between a - z: ");
                 guessLetter = char.Parse(Console.ReadLine());
-                //guess = guessLetter == letter;
+                guess = guessLetter == letter;
                 if (guessLetter == letter && chance == 1)
                 {
                     Console.WriteLine("You won!!!\n" +
@@ -107,15 +107,9 @@ namespace Xwhile2
                 }
                 else
                 {
-                    if ((int)letter == (int)guessLetter + 5)
-                        Console.WriteLine("The letter is bigger then your guessed");
-                    else if ((int)letter == (int)guessLetter - 5)
-                        Console.WriteLine("The letter is smaller then your guessed");
-                    else
-                        Console.WriteLine("You too far from these letter");
-                    //chance++;
+                    chance++;
                 }
-                chance++;
+                //chance++;
             }
             
             
